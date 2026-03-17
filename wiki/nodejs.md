@@ -165,6 +165,8 @@ Docs:
 - [`npm`](#npm)
 - [`pnpm`](#pnpm)
 
+<!-- TODO toc should include nested sections but there are not only package managers -->
+
 ### `package.json`
 
 `package.json` is a configuration [file](./file-system.md#file) in a [`Node.js`](#what-is-nodejs) project that declares the project's [dependencies](./package-manager.md#dependency), scripts, and metadata.
