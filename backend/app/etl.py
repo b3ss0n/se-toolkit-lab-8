@@ -26,7 +26,7 @@ from app.settings import settings
 
 async def fetch_items() -> list[dict]:
     """Fetch the lab/task catalog from the autochecker API."""
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(timeout=60) as client:
         resp = await client.get(
             f"{settings.autochecker_api_url}/api/items",
             auth=(settings.autochecker_email, settings.autochecker_password),
@@ -39,7 +39,7 @@ async def fetch_logs(since: datetime | None = None) -> list[dict]:
     """Fetch check results from the autochecker API with pagination."""
     all_logs: list[dict] = []
 
-    async with httpx.AsyncClient() as client:
+    async with httpx.AsyncClient(timeout=60) as client:
         cursor = since
         while True:
             params: dict[str, str | int] = {"limit": 500}
