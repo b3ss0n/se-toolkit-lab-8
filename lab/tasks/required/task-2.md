@@ -170,7 +170,7 @@ Both are in a single repository. The webchat plugin handles:
    echo '{"content":"What labs are available?"}' | websocat "ws://localhost:42002/ws/chat?access_key=YOUR_NANOBOT_ACCESS_KEY"
    ```
 
-8. Open `http://localhost:42002/flutter` in a browser. Log in with your `NANOBOT_ACCESS_KEY`. Start by asking the agent:
+8. Open `http://<your-vm-ip>:42002/flutter` in your browser. Log in with your `NANOBOT_ACCESS_KEY`. Start by asking the agent:
 
    - `What can you do in this system?`
    - One quiz or LMS/system question of your choice
@@ -187,7 +187,7 @@ Both are in a single repository. The webchat plugin handles:
 ### Checkpoint for Part B
 
 1. `websocat "ws://localhost:42002/ws/chat?access_key=YOUR_NANOBOT_ACCESS_KEY"` returns a real agent response.
-2. Open `http://localhost:42002/flutter` — you should see a login screen.
+2. Open `http://<your-vm-ip>:42002/flutter` — you should see a login screen.
 3. Log in with your `NANOBOT_ACCESS_KEY`, ask `What can you do in this system?`, then ask one question from the quiz question bank.
 4. Screenshot the conversation and add it to `REPORT.md` under `## Task 2B — Web client`.
 
