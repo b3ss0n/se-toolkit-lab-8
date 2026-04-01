@@ -124,11 +124,11 @@ The same MCP server works with any agent that speaks MCP — nanobot, Claude, Cu
 
 The LMS MCP server is provided in `mcp/mcp-lms/`. It exposes the backend API as tools: `lms_health`, `lms_labs`, `lms_pass_rates`, etc.
 
-1. Install the MCP server as a dependency so nanobot can find it:
+1. Uncomment `mcp-lms` in `nanobot/pyproject.toml` (marked with `Task 1`), then sync:
 
    ```terminal
    cd nanobot
-   uv add mcp-lms --editable ../mcp/mcp-lms
+   uv sync
    ```
 
 2. Add the MCP server to your repo-local nanobot config (`nanobot/config.json`). It runs as a subprocess via `python -m mcp_lms`.
