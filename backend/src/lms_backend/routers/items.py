@@ -1,4 +1,4 @@
-"""Router for item endpoints — reference implementation."""
+"""Router for item endpoints."""
 
 import logging
 
@@ -17,17 +17,9 @@ logger = logging.getLogger(__name__)
 @router.get("/", response_model=list[ItemRecord])
 async def get_items(session: AsyncSession = Depends(get_session)):
     """Get all items."""
-    try:
-        return await read_items(session)
-    except Exception as exc:
-        logger.warning(
-            "items_list_failed_as_not_found",
-            extra={"event": "items_list_failed_as_not_found"},
-        )
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail="Items not found",
-        ) from exc
+    # Don't catch exceptions - let them propagate to the global exception handler
+    # which will return proper 500 for database errors
+    return await read_items(session)
 
 
 @router.get("/{item_id}", response_model=ItemRecord)
@@ -41,7 +33,7 @@ async def get_item(item_id: int, session: AsyncSession = Depends(get_session)):
     return item
 
 
-@router.post("/", response_model=ItemRecord, status_code=201)
+@router.post("/", response_model=ItemRecord, status_code=status.HTTP_201_CREATED)
 async def post_item(body: ItemCreate, session: AsyncSession = Depends(get_session)):
     """Create a new item."""
     try:
