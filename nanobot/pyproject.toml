@@ -10,14 +10,15 @@ dependencies = [
     "opentelemetry-distro[otlp]>=0.61b0",
     "opentelemetry-exporter-otlp-proto-grpc>=1.40.0",
     "opentelemetry-instrumentation-logging>=0.61b0",
-    
     # Task 1 — uncomment after you add the LMS MCP server.
-    # "mcp-lms",
-    
+    "mcp-lms",
     # Task 2B — uncomment after you add the webchat channel.
-    # "mcp-webchat",
-    # "nanobot-webchat",
-    
+    "mcp-webchat",
+    "nanobot-webchat",
     # Task 3 — uncomment after you add mcp-obs.
-    # "mcp-obs",
+    "mcp-obs",
+    "nanobot-ai",
 ]
+
+[tool.uv.sources]
+nanobot-ai = { url = "https://github.com/HKUDS/nanobot/archive/e7d371ec1e6531b28898ec2c869ef338e8dd46ec.zip" }

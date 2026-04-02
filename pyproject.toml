@@ -5,32 +5,32 @@ members = [
   "mcp/mcp-lms",
 
   # Task 1 — uncomment after you create the nanobot/ project.
-  # "nanobot",
+  "nanobot",
   
   # Task 2B — uncomment after you add the webchat channel.
-  # "nanobot-websocket-channel/nanobot-channel-protocol",
-  # "nanobot-websocket-channel/mcp-webchat",
-  # "nanobot-websocket-channel/nanobot-webchat",
+  "nanobot-websocket-channel/nanobot-channel-protocol",
+  "nanobot-websocket-channel/mcp-webchat",
+  "nanobot-websocket-channel/nanobot-webchat",
   # "nanobot-websocket-channel/client-telegram-bot",
   
   # Task 3 — uncomment after you add mcp-obs.
-  # "mcp/mcp-obs",
+  "mcp/mcp-obs",
 ]
 
 [tool.uv.sources]
 mcp-lms = { workspace = true, editable = true }
 
 # Task 1 — uncomment after you create the nanobot/ project.
-# nanobot = { workspace = true, editable = true }
+nanobot = { workspace = true, editable = true }
 
 # Task 2B — uncomment after you add the webchat channel.
-# mcp-webchat = { workspace = true, editable = true }
-# nanobot-channel-protocol = { workspace = true, editable = true }
-# nanobot-webchat = { workspace = true, editable = true }
+mcp-webchat = { workspace = true, editable = true }
+nanobot-channel-protocol = { workspace = true, editable = true }
+nanobot-webchat = { workspace = true, editable = true }
 # client-telegram-bot = { workspace = true, editable = true }
 
 # Task 3 — uncomment after you add mcp-obs.
-# mcp-obs = { workspace = true, editable = true }
+mcp-obs = { workspace = true, editable = true }
 
 [dependency-groups]
 dev = [
